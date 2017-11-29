@@ -11,10 +11,12 @@
         
         body {
             background-image: url(Assets/img/fond2.jpg);
-            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
 
         main {
+            padding: 2em;
             max-width: 990px;
             width: 100%;
             height: auto;
@@ -42,11 +44,19 @@
             font-size: 14px;
             padding: 20px;
             box-sizing: border-box;
+            text-align: center;
         }
 
         mark {
             background: orange;
             color: black;
+        }
+
+        form {
+            border-radius: 6px;
+            padding: 15px;
+            background: white;
+            box-shadow: 4px 3px 11px #555;
         }
     
     </style>
@@ -63,11 +73,11 @@
        4. BONUS : Mettre en Place Markjs.io afin de surligner des mots dans les différents articles à l'aide d'un champs input.
      
     -->
-    <form class="form-group col-md-2" style="position: fixed; padding-top : 365px;">
+    <form class="form-group col-md-2" style="position: fixed; margin-left: 45px; margin-top : 265px;">
     <label for="keyword">Filtre :</label>
     <input type="text" name="keyword" class="form-control" placeholder="Filtre">
     </form>
-    <main class="mark">
+    <main class="surligne">
         <!--<section>
             <header>
                 <h1>TITRE</h1>
@@ -115,9 +125,9 @@
       options[$(this).val()] = $(this).is(":checked");
     });
 
-    $(".mark").unmark({
+    $(".surligne").unmark({
       done: function() {
-        $(".mark").mark(keyword, options);
+        $(".surligne").mark(keyword, options);
       }
     });
   };
