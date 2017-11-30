@@ -44,7 +44,29 @@ $(function () {
            if(txt.length<1)
                $("#error_msg").html("Inserez au moins 1 caractère !");
            else
-               $('.membre:contains("'+txt+'")').fadeIn(600);
+               $('.membre:contains("'+txt+'")').fadeIn(900);
         }); // -- input
     }); // -- JSON
 }); // -- Function
+
+$(function() {
+    
+      var mark = function() {
+    
+        var keyword = $("input[name='keyword']").val();
+    
+        var options = {};
+        $("input[name='opt[]']").each(function() {
+          options[$(this).val()] = $(this).is(":checked");
+        });
+    
+        $(".membre").unmark({
+          done: function() {
+            $(".membre").mark(keyword, options);
+          }
+        });
+      };
+    
+      $("input[name='keyword']").on("input", mark);
+    
+    });
