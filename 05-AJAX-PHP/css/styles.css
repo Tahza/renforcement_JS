@@ -229,8 +229,6 @@
         /* -- J'ai dÃ©fini mon pied de page Ã  960px de largeur. -- */
         width: 950px;
         /* -- Une hauteur de 210px. -- */
-        height: 210px;
-        /* -- Positionnement sur la Gauche -- */
         float: left;
         /* -- Une Marge Interne en Haut de 10px  -- */
         padding-top: 10px;
