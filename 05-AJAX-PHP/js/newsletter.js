@@ -58,11 +58,14 @@ $(() => {
             // -- Si je n'ai pas de classe 'has-error' parmi les enfants de ma newsletter, alors il n'y a pas d'erreur et je peux procéder à ma requete AJAX
 
             $.ajax({
-                type: $(this).attr('method'),
-                url: $(this).attr('action'),
-                data: $(this).serialize(),
-                dataType: 'JSON',
-                timeout: 5000
+                type          : $(this).attr('method'),
+                url            : $(this).attr('action'),
+                data          : $(this).serialize(),
+                dataType     : 'JSON',
+                timeout      : 5000,
+                beforeSend  : () => {
+
+                }
             })
                 .done((resultat) => {
                     //console.log(resultat);
